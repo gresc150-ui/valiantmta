@@ -1,0 +1,625 @@
+:root {
+    --primary-color: #943CB8;
+    --primary-hover: #7b2fa1;
+    --bg-dark: #0f0f12;
+    --bg-card: #18181f;
+    --text-color: #ffffff;
+    --text-muted: #a0a0ab;
+    --border-color: #2a2a36;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+span {
+    color: var(--primary-color);
+}
+
+/* Navigáció */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background-color: rgba(15, 15, 18, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    max-height: 45px;
+}
+
+.nav-logo {
+    height: 40px !important;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* Gombok */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 0 15px rgba(148, 60, 184, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-large {
+    padding: 14px 32px;
+    font-size: 16px;
+}
+
+/* Hero Szekció */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: radial-gradient(circle at center, rgba(148, 60, 184, 0.15) 0%, rgba(15, 15, 18, 1) 70%);
+}
+
+.hero-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(148, 60, 184, 0.4));
+}
+
+.badge {
+    background-color: rgba(148, 60, 184, 0.2);
+    color: var(--primary-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(148, 60, 184, 0.3);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 20px 0;
+    font-weight: 800;
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Page Header (Aloldalak teteje) */
+.page-header {
+    padding-top: 150px;
+    padding-bottom: 40px;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(148, 60, 184, 0.1) 0%, rgba(15, 15, 18, 1) 80%);
+}
+
+.page-header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/* Content Container */
+.content-container {
+    padding: 40px 8% 80px 8%;
+}
+
+.section-title {
+    font-size: 24px;
+    margin: 40px 0 20px 0;
+    color: var(--text-color);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 12px;
+}
+
+/* Funkciók */
+.features {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* Discord Szekció */
+.discord-section {
+    padding: 80px 8%;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.discord-text h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.discord-text p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Szabályzat Stílusok */
+.rules-section {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.rules-section h2 {
+    color: var(--primary-color);
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rule-item {
+    margin-bottom: 20px;
+}
+
+.rule-item:last-child {
+    margin-bottom: 0;
+}
+
+.rule-item h3 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.rule-item p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Vezetőség és Admin Kártya Stílusok */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background-color: var(--bg-card);
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.avatar-box {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(148, 60, 184, 0.1);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(148, 60, 184, 0.3);
+}
+
+.team-card-logo {
+    width: 45px;
+    height: auto;
+    object-fit: contain;
+}
+
+.team-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.team-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Rang Jelvények - Dupla Színátmenettel */
+.role {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Tulajdonos (#ff4848 -> #aa3b3b) */
+.role.owner {
+    background: linear-gradient(135deg, #ff4848 0%, #aa3b3b 100%);
+    border: 1px solid #ff4848;
+}
+
+/* Fejlesztő (#b2f9ff -> #4cadd0) */
+.role.dev {
+    background: linear-gradient(135deg, #b2f9ff 0%, #4cadd0 100%);
+    border: 1px solid #b2f9ff;
+    color: #000000;
+}
+
+/* Manager & Discord Manager (#00ffae -> #08db90) */
+.role.manager, .role.discord-manager {
+    background: linear-gradient(135deg, #00ffae 0%, #08db90 100%);
+    border: 1px solid #00ffae;
+    color: #000000;
+}
+
+/* Szuperadmin (#ce4f00 -> #c58f04) */
+.role.superadmin {
+    background: linear-gradient(135deg, #ce4f00 0%, #c58f04 100%);
+    border: 1px solid #ce4f00;
+}
+
+/* Főadmin (#f3d65a -> #524b2a) */
+.role.headadmin, .role.fa {
+    background: linear-gradient(135deg, #f3d65a 0%, #524b2a 100%);
+    border: 1px solid #f3d65a;
+    color: #000000;
+}
+
+/* Admin (#71ff9e -> #369876) */
+.role.admin {
+    background: linear-gradient(135deg, #71ff9e 0%, #369876 100%);
+    border: 1px solid #71ff9e;
+    color: #000000;
+}
+
+/* Adminsegéd (#ff9cbf -> #ff5dd6) */
+.role.helper {
+    background: linear-gradient(135deg, #ff9cbf 0%, #ff5dd6 100%);
+    border: 1px solid #ff9cbf;
+    color: #ffffff;
+}
+
+/* Lábléc */
+footer {
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.footer-logo {
+    height: 45px;
+    width: auto;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Patch Notes Stílusok */
+.patch-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.patch-card:hover {
+    border-color: var(--primary-color);
+}
+
+.patch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.patch-header h2 {
+    font-size: 22px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.patch-date {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+.patch-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.patch-tag.new {
+    background: rgba(148, 60, 184, 0.2);
+    color: var(--primary-color);
+    border: 1px solid rgba(148, 60, 184, 0.4);
+}
+
+.patch-category {
+    margin-bottom: 20px;
+}
+
+.patch-category:last-child {
+    margin-bottom: 0;
+}
+
+.patch-category h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.patch-category ul {
+    list-style: none;
+    padding-left: 25px;
+}
+
+.patch-category ul li {
+    color: var(--text-muted);
+    font-size: 14px;
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.patch-category ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Színkódok az ikonokhoz */
+.text-success { color: #2ecc71; }
+.text-warning { color: #f1c40f; }
+.text-danger { color: #e74c3c; }
+
+/* ==========================================
+   FŐOLDAL (INDEX) - KÖZPONTI LOAD
+========================================== */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0b0b0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fadeOutLoader 0.6s cubic-bezier(0.77, 0, 0.175, 1) 1.2s forwards;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    animation: logoPopIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.loader-logo {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.6));
+}
+
+.loader-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.loader-text span, .side-loader-text span {
+    color: #a855f7;
+}
+
+@keyframes logoPopIn {
+    0% { opacity: 0; transform: scale(0.6) translateY(30px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeOutLoader {
+    0% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* ==========================================
+   ALOLDALAK - OLDALRÓL BEÚSZÓ LOGÓ
+========================================== */
+#page-loader-side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0b0b0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fadeOutLoader 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.9s forwards;
+}
+
+.side-loader-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: logoSlideIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.side-loader-logo {
+    width: 60px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6));
+}
+
+.side-loader-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+/* Balról jobbra beúszás animációja */
+@keyframes logoSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
