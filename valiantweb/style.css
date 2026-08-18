@@ -624,30 +624,30 @@ footer {
     }
 }
 
-/* Szabályzat kártyák stílusa */
-.rule-card {
+/* Szabályzat kártyák stílusa (Javítva .rule-item-re) */
+.rule-item {
     background: rgba(18, 18, 24, 0.6);
     padding: 20px;
     border-radius: 10px;
     border-left: 4px solid #a855f7;
-    transition: all 0.3s ease; /* Ez teszi simává az animációt */
+    transition: all 0.3s ease;
     margin-bottom: 15px;
     cursor: pointer;
 }
 
-/* Hover effekt (amikor fölé viszed az egeret) */
-.rule-card:hover {
-    background: rgba(168, 85, 247, 0.1); /* Enyhe lila háttér */
-    transform: translateX(10px); /* Kicsit elmozdul jobbra */
-    border-left: 4px solid #ffffff; /* A vonal fehérre vált */
+/* Hover effekt */
+.rule-item:hover {
+    background: rgba(168, 85, 247, 0.1);
+    transform: translateX(10px);
+    border-left: 4px solid #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.rule-card h3 {
+.rule-item h3 {
     color: #ffffff;
     transition: color 0.3s ease;
 }
 
-.rule-card:hover h3 {
-    color: #a855f7; /* A cím színe is lila lesz */
+.rule-item:hover h3 {
+    color: #a855f7;
 }
